@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../css/estilos.css" fx:controller="org.example.proyectofinalhospital.controller.DashboardController" prefHeight="720.0" prefWidth="1180.0">
+    <left>
+        <VBox prefWidth="230.0" spacing="6.0" styleClass="sidebar">
+            <children>
+                <Label styleClass="sidebar-logo" text="SIGAH" />
+                <Label styleClass="sidebar-sub" text="Gestión Hospitalaria" wrapText="true" />
+                <Region prefHeight="18.0" />
+                <Button fx:id="btnInicio" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarInicio" styleClass="menu-btn" text="Inicio" />
+                <Button fx:id="btnPacientes" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarPacientes" styleClass="menu-btn" text="Pacientes" />
+                <Button fx:id="btnMedicos" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarMedicos" styleClass="menu-btn" text="Médicos" />
+                <Button fx:id="btnEspecialidades" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarEspecialidades" styleClass="menu-btn" text="Especialidades" />
+                <Button fx:id="btnCitas" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarCitas" styleClass="menu-btn" text="Citas" />
+                <Button fx:id="btnUsuarios" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarUsuarios" styleClass="menu-btn" text="Usuarios" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnCerrarSesion" alignment="CENTER_LEFT" maxWidth="Infinity" mnemonicParsing="false" onAction="#cerrarSesion" styleClass="menu-btn-salir" text="Cerrar sesión" />
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox styleClass="modulo">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="topbar">
+                    <children>
+                        <Label fx:id="lblSeccion" styleClass="topbar-titulo" text="Inicio" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblUsuarioActual" styleClass="subtitulo" text="Usuario: —" />
+                    </children>
+                </HBox>
+                <!-- El controller carga aquí las vistas de cada módulo (contentArea.getChildren().setAll(...)) -->
+                <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox fx:id="panelBienvenida" spacing="18.0" styleClass="modulo">
+                            <padding>
+                                <Insets bottom="24.0" left="28.0" right="28.0" top="24.0" />
+                            </padding>
+                            <children>
+                                <Label fx:id="lblBienvenida" styleClass="titulo" text="Bienvenido(a) a SIGAH" />
+                                <Label styleClass="subtitulo" text="Seleccione un módulo en el menú lateral para comenzar." />
+                                <HBox spacing="20.0">
+                                    <children>
+                                <VBox HBox.hgrow="ALWAYS" maxWidth="Infinity" spacing="4.0" styleClass="kpi-card">
+                                    <children>
+                                        <Label fx:id="lblTotalPacientes" styleClass="kpi-valor" text="0" />
+                                        <Label styleClass="kpi-titulo" text="Pacientes registrados" />
+                                    </children>
+                                </VBox>
+                                <VBox HBox.hgrow="ALWAYS" maxWidth="Infinity" spacing="4.0" styleClass="kpi-card">
+                                    <children>
+                                        <Label fx:id="lblMedicosActivos" styleClass="kpi-valor" text="0" />
+                                        <Label styleClass="kpi-titulo" text="Médicos activos" />
+                                    </children>
+                                </VBox>
+                                <VBox HBox.hgrow="ALWAYS" maxWidth="Infinity" spacing="4.0" styleClass="kpi-card">
+                                    <children>
+                                        <Label fx:id="lblCitasProgramadas" styleClass="kpi-valor" text="0" />
+                                        <Label styleClass="kpi-titulo" text="Citas programadas" />
+                                    </children>
+                                </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
