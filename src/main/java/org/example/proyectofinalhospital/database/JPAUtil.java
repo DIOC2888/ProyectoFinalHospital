@@ -1,4 +1,4 @@
-package org.example.proyectofinalhospital.util;
+package org.example.proyectofinalhospital.database;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

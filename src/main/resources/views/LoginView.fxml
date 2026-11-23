@@ -11,7 +11,7 @@
         <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="380.0" spacing="8.0" styleClass="login-card">
             <children>
                 <Label styleClass="login-logo" text="SIGAH" />
-                <Label styleClass="subtitulo" text="Sistema Integral de Gestión Administrativa Hospitalaria" wrapText="true" />
+                <Label styleClass="subtitulo" text="En una base de datos nueva, el primer acceso crea la cuenta administradora." wrapText="true" />
 
                 <Label styleClass="campo-label" text="Usuario">
                     <VBox.margin>
