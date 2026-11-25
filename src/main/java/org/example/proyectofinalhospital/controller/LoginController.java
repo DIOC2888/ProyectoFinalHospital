@@ -78,7 +78,7 @@ public class LoginController {
     }
 
     private void abrirDashboard() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("DashboardView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardView.fxml"));
         Stage stage = (Stage)
                 txtUsuario.getScene().getWindow();
         stage.setTitle("SIGAH - Gestión Hospitalaria");
